@@ -2,9 +2,9 @@
 - name: remove AH user with infra.ah_configuration
   hosts: localhost
   vars:
-    ah_host: hub.justinmelhorn.com
-    ah_username: admin
-    ah_password: "{{ _password_ }}"
+    - ah_host: hub.justinmelhorn.com
+    - ah_username: admin
+    - ah_password: "{{ _password_ }}"
   roles:
     - infra.ah_configuration.user
       vars:
