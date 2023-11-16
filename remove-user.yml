@@ -6,7 +6,7 @@
     - ah_username: admin
     - ah_password: "{{ _password_ }}"
   roles:
-    - infra.ah_configuration.user
+    - role: infra.ah_configuration.user
       vars:
         ah_users:
           - username: "{{ _user_ }}"
