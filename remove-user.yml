@@ -1,0 +1,11 @@
+---
+- name: remove user from PAH
+  become: yes
+  hosts: automationhub
+  collections:
+    - infra.ah_configuration
+  tasks:
+    - name: remove ah user
+      infra.ah_configuration.ah_user:
+        state: absent
+        username: justin
