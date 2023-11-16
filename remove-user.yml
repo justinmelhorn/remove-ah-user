@@ -7,3 +7,4 @@
       infra.ah_configuration.ah_user:
         state: absent
         username: "{{ _username_ }}"
+        validate_certs: no
