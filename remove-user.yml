@@ -8,3 +8,6 @@
         state: absent
         username: "{{ _username_ }}"
         validate_certs: no
+        ah_host: hub.justinmelhorn.com
+        ah_username: admin
+        ah_password: "{{ _password_ }}"
