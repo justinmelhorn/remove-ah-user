@@ -1,11 +1,11 @@
 ---
-- name: remove user from PAH
-  become: yes
-  hosts: automationhub
+- name: remove AH user with infra.ah_configuration
   collections:
     - infra.ah_configuration
+  hosts: automationhub
   tasks:
-    - name: remove ah user
+    - name: remove user
+      register: result
       infra.ah_configuration.ah_user:
         state: absent
-        username: justin
+        username: "{{ _username_ }}"
