@@ -1,13 +1,13 @@
 ---
 - name: remove AH user with infra.ah_configuration
-  hosts: automationhub
-  tasks:
-    - name: remove user
-      register: result
-      infra.ah_configuration.ah_user:
-        state: absent
-        username: "{{ _username_ }}"
-        validate_certs: no
-        ah_host: hub.justinmelhorn.com
-        ah_username: admin
-        ah_password: "{{ _password_ }}"
+  hosts: localhost
+  vars:
+    ah_host: hub.justinmelhorn.com
+    ah_username: admin
+    ah_password: "{{ _password_ }}"
+  roles:
+    - infra.ah_configuration.user
+      vars:
+        ah_users:
+          - username: "{{ _user_ }}"
+            state: absent
